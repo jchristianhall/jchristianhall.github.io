@@ -1,0 +1,271 @@
+@import "reset.scss";
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+/** Variables */
+$primary: #435A6B;
+$secondary: #0E83CD;
+$tertiary: #9B9B9B;
+$background: #ECF0F1;
+
+$alpha: new-breakpoint(max-width 1024px);
+$beta: new-breakpoint(max-width 480px);
+
+/** Typography */
+@include font-face(icons, '../../fonts/icons');
+[data-icon] { display: inline-block; }
+[data-icon]:before {
+  content: attr(data-icon);
+  text-transform: none;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 4em;
+  font-family: 'icons';
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #435a6b;
+  text-decoration: none;
+}
+h1 {
+  @include media($beta) {
+    width: 100%;
+    letter-spacing: 12px;
+  }
+  float: left;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 450px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  font: 400 normal 1.1em "brandon-grotesque", sans-serif;
+}
+h2 {
+  letter-spacing: 0.05em;
+  font: 400 normal 1.5em "adobe-garamond-pro", sans-serif;
+}
+h3 {
+  @include media($beta) { line-height: 1em; }
+  color: $secondary;
+  letter-spacing: 0.05em;
+  font: 400 oblique 1em/1.5em "adobe-garamond-pro", sans-serif;
+  span {
+    color: $tertiary;
+    letter-spacing: 0.25em;
+    font-style: normal;
+  }
+}
+
+/** Animation */
+@include keyframes(fade) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@include keyframes(slide) {
+  0% {
+    @include transform(translateY(30px));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translateY(0px));
+    opacity: 1;
+  }
+}
+
+/** Foundation */
+.container {
+  @include outer-container;
+  padding: 0 25px;
+}
+body {
+  background-color: #fff;
+  color: $primary;
+  font-family: "adobe-garamond-pro", sans-serif;
+}
+
+/** Header */
+header {
+  @include animation(fade 1s ease-in-out both 0.5s);
+  @include media($beta) { height: 300px; }
+  @include size(100% 350px);
+  background-color: $background;
+}
+.title {
+  @include media($beta) {
+    margin-top: 75px;
+    width: 270px;
+  }
+  margin: 100px auto 0 auto;
+  width: 450px;
+}
+.titleImage {
+  height: 100px;
+  & > div {
+    @include size(50);
+    @include media($beta) { margin: 25px 20px; }
+    float: left;
+    margin: 25px 50px;
+    text-align: center;
+    line-height: 50px;
+  }
+}
+#logo {
+  @include size(50);
+  @include retina-image('../../img/logo', 50px 50px);
+  float: left;
+  background-size: 50px 50px;
+}
+#plus { font-size: 2em; }
+#lab {
+  @include media($beta) { margin: 14px 25px 0 12px; }
+  margin: 14px 50px 0 25px;
+  font-size: 1.25em;
+}
+
+/** Projects */
+.projects {
+  @include media($beta) { padding: 50px 0; }
+  padding-top: 100px;
+}
+.project {
+  @include span-columns(12);
+  @include media($alpha) {
+    @include span-columns(8);
+    @include shift(2);
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $tertiary;
+  }
+  @include media($beta) {
+    @include span-columns(12);
+    @include shift(0);
+    margin-bottom: 25px;
+  }
+  margin-bottom: 100px;
+  img {
+    @include span-columns(6 of 12);
+    @include media($alpha) {
+      @include span-columns(8 of 8);
+      margin-bottom: 25px;
+    }
+    max-width: 100%;
+  }
+}
+.project-content {
+  @include span-columns(6 of 12);
+  @include media($alpha) { @include span-columns(8 of 8); }
+  a {
+    @include transition(all 0.5s ease-in-out);
+    @include position(absolute, 0 0 0px 0);
+    @include span-columns(6 of 12);
+    @include media($alpha) {
+      @include span-columns(8 of 8);
+      position: relative;
+    }
+    display: block;
+    margin-top: 20px;
+    padding: 20px 25px;
+    background-color: $background;
+    letter-spacing: 0.2em;
+    &:hover {
+      background-color: $secondary;
+      color: #fff;
+    }
+  }
+}
+.project-description {
+  @include media($beta) { padding: 15px 0; }
+  padding: 20px 0;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+.project-languages {
+  color: $tertiary;
+  letter-spacing: 0.15em;
+}
+#malibu { @include animation(slide 1.0s ease-in-out both 1.5s); }
+#ktr { @include animation(slide 1.0s ease-in-out both 1.75s); }
+#rhh { @include animation(slide 1.0s ease-in-out both 2s); }
+#esquire { @include animation(slide 1.0s ease-in-out both 2.25s); }
+#shawn { @include animation(slide 1.0s ease-in-out both 2.5s); }
+#tiana { @include animation(slide 1.0s ease-in-out both 2.75s); }
+
+/** Footer */
+footer {
+  @include animation(fade 1s ease-in-out both 0.5s);
+  padding: 20px 0;
+  background-color: $background;
+  nav {
+    @include media($alpha) {
+      width: 100%;
+      margin-left: 8px; // Weird centering problem
+    }
+    @include media($beta) { margin-left: auto; }
+    margin: 10px auto 20px auto;
+    width: 620px;
+    a{
+      @include size(100px 50px);
+      @include transition (color 0.5s ease-in-out);
+      @include media($alpha) {
+        margin-bottom: 30px;
+        width: 32.5%;
+      }
+      position: relative;
+      color: $primary;
+      vertical-align: middle;
+      text-align: center;
+      span {
+        @include transition (all 0.5s ease-in-out);
+        @include position(absolute, 0 0 -20px 0px);
+        @include transform(translateY(5px));
+        @include media($alpha) {
+          width: 100%;
+          opacity: 1;
+        }
+        width: 100px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.8em;
+        font-family: "brandon-grotesque", sans-serif;
+        opacity: 0;
+      }
+      &:hover {
+        color: $secondary;
+        span {
+          @include transform(translateY(0px));
+          color: $secondary;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+/** Alert */
+#alert {
+  display: none;
+  padding: 20px 0;
+  background: $secondary;
+  p {
+    font-family: "brandon-grotesque", sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+#alert-icon {
+  margin: 10px auto;
+  display: block;
+}
+.browsers {
+  width: 165px;
+  margin: 10px auto;
+  img {
+    margin: 0 10px;
+  }
+}

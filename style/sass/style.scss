@@ -1,0 +1,207 @@
+@import "reset.scss";
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+/** Variables */
+$primary: #435A6B;
+$secondary: #0E83CD;
+
+$alpha: new-breakpoint(max-width 1024px);
+$beta: new-breakpoint(max-width 480px);
+
+/** Typography */
+@include font-face(icons, '../../fonts/icons');
+[data-icon] { display: inline-block; }
+[data-icon]:before {
+  content: attr(data-icon);
+  text-transform: none;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 4em;
+  font-family: 'icons';
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #435a6b; text-decoration: none; }
+h1 {
+  @include media($alpha) { text-align: center; }
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font: 400 normal 1.5em "brandon-grotesque", sans-serif;
+}
+h2 {
+  @include media($alpha) { text-align: center; }
+  @include media($beta) { line-height: 2em; }
+  font: 400 oblique 1em/1.5em "adobe-garamond-pro", sans-serif;
+  color: $secondary;
+  letter-spacing: 0.05em;
+}
+
+/** Foundation */
+.container {
+  @include outer-container;
+  @include media($alpha) { padding: 0 25px; }
+  max-width: 750px;
+}
+body {
+  background-color: #fff;
+  color: $primary;
+  font-family: "adobe-garamond-pro", sans-serif;
+}
+
+/** Header */
+header {
+  @include media($alpha) { padding-top: 0; }
+  padding-top: 20px;
+  width: 100%;
+}
+.logo {
+  @include size(75);
+  @include retina-image('../../img/logo', 75px 75px);
+  @include media($beta) { margin-bottom: 20px; }
+  margin: 40px auto;
+  background-size: 75px 75px;
+}
+
+/** About */
+.about {
+  padding: 10px 0;
+  p {
+    @include media($beta) {
+      text-align: justify;
+      font-size: 1em;
+    }
+    font-size: 1.25em;
+    line-height: 1.75em;
+  }
+  a {
+    @include transition (all 0.5s ease-in-out);
+    &:hover {
+      color: $secondary;
+      border-color: $secondary;
+    }
+    border-bottom: 1px solid $primary;
+  }
+}
+
+/** Social */
+.social {
+  padding-bottom: 20px;
+  nav {
+    @include media($alpha) {
+      width: 100%;
+      margin-left: 8px; // Weird centering problem
+    }
+    @include media($beta) { margin-left: auto; }
+    margin: 10px auto 20px auto;
+    width: 620px;
+    a{
+      @include size(100px 50px);
+      @include transition (color 0.5s ease-in-out);
+      @include media($alpha) {
+        margin-bottom: 30px;
+        width: 32.5%;
+      }
+      position: relative;
+      color: $primary;
+      vertical-align: middle;
+      text-align: center;
+      span {
+        @include transition (all 0.5s ease-in-out);
+        @include position(absolute, 0 0 -20px 0px);
+        @include transform(translateY(5px));
+        @include media($alpha) {
+          width: 100%;
+          opacity: 1;
+        }
+        width: 100px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.8em;
+        font-family: "brandon-grotesque", sans-serif;
+        opacity: 0;
+      }
+      &:hover {
+        color: $secondary;
+        span {
+          @include transform(translateY(0px));
+          color: $secondary;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+/** Status */
+.status-box {
+  @include media($alpha) { width: 60%; }
+  @include media($beta) { width: 100%; }
+  margin: 0 auto;
+  padding: 10px;
+  width: 40%;
+  background-color: #ecf0f1;
+}
+.status-indicator {
+  @include size(15);
+  float: left;
+  margin-right: 10px;
+  border-radius: 100%;
+  background-color: #cd4436;
+}
+.status-message {
+  @include media($beta) { font-size: 0.9em; }
+  vertical-align: middle;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  font-family: "brandon-grotesque", sans-serif;
+  line-height: 15px;
+}
+
+/** Alert */
+#alert {
+  display: none;
+  padding: 20px 0;
+  background: $secondary;
+  p {
+    font-family: "brandon-grotesque", sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+#alert-icon {
+  margin: 10px auto;
+  display: block;
+}
+.browsers {
+  width: 165px;
+  margin: 10px auto;
+  img {
+    margin: 0 10px;
+  }
+}
+
+/** Animations */
+@include keyframes(slide) {
+  0% {
+    @include transform(translateY(30px));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translateY(0px));
+    opacity: 1;
+  }
+}
+
+.logo { @include animation(slide 1.0s ease-in-out both 0.5s); }
+h1 { @include animation(slide 1.0s ease-in-out both 0.75s); }
+h2 { @include animation(slide 1.0s ease-in-out both 1s); }
+.about { @include animation(slide 1.0s ease-in-out both 1.25s); }
+.social { @include animation(slide 1.0s ease-in-out both 1.5s); }
+.status { @include animation(slide 1.0s ease-in-out both 1.75s); }
