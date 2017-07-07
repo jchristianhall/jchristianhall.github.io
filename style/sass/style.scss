@@ -95,7 +95,7 @@ header {
     }
     @include media($beta) { margin-left: auto; }
     margin: 10px auto 20px auto;
-    width: 620px;
+    width: 520px;
     a{
       @include size(100px 50px);
       @include transition (color 0.5s ease-in-out);

@@ -146,7 +146,7 @@ header {
   padding-bottom: 20px; }
   .social nav {
     margin: 10px auto 20px auto;
-    width: 620px; }
+    width: 520px; }
     @media screen and (max-width: 1024px) {
       .social nav {
         width: 100%;
