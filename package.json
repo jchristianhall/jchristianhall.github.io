@@ -1,0 +1,37 @@
+{
+  "name": "christianhall",
+  "description": "Christian Hall's personal site",
+  "author": "Christian Hall",
+  "private": true,
+  "version": "4.0.0",
+  "dependencies": {
+    "gatsby": "^2.2.5",
+    "gatsby-image": "^2.0.34",
+    "gatsby-plugin-manifest": "^2.0.24",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.10",
+    "gatsby-plugin-sharp": "^2.0.30",
+    "gatsby-source-filesystem": "^2.0.27",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "gatsby develop -p 7777",
+    "serve": "gatsby serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jchristianhall/jchristianhall.github.io"
+  },
+  "bugs": {
+    "url": "https://github.com/jchristianhall/jchristianhall.github.io/issues"
+  }
+}
