@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "icons";
+  src: url("../fonts/icons.eot");
+  src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/icons.woff") format("woff"),
+    url("../fonts/icons.ttf") format("truetype"),
+    url("../fonts/icons.svg#icons") format("svg");
+}
+[data-icon] {
+  display: inline-block;
+}
+[data-icon]:before {
+  content: attr(data-icon);
+  text-transform: none;
+  font-weight: normal;
+  font-variant: normal;
+  font-family: "icons";
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  position: relative;
+  background-color: #101010;
+  color: #fff;
+  text-align: center;
+  font: 300 14px "Open Sans";
+  letter-spacing: 0.1em;
+  margin: 0;
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+}
+
+footer {
+  font-size: 0.8rem;
+}
