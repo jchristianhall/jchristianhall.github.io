@@ -19,10 +19,12 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "prettier": "^1.16.4"
   },
   "scripts": {
     "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "gatsby develop -p 7777",
     "serve": "gatsby serve"
