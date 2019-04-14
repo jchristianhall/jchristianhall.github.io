@@ -1,7 +1,7 @@
 import ComingSoon from "../components/ComingSoon"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import React from "react"
-import SEO from "../components/SEO"
+import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
