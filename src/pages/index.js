@@ -1,13 +1,5 @@
-import ComingSoon from "../components/ComingSoon"
-import Layout from "../components/layout"
-import React from "react"
-import SEO from "../components/seo"
+function HomePage() {
+  return <div>Welcome to Next.js!</div>
+}
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Christian Hall | Coming Soon" />
-    <ComingSoon />
-  </Layout>
-)
-
-export default IndexPage
+export default HomePage
