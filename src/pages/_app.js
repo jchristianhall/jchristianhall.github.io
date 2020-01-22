@@ -1,3 +1,4 @@
+import "./global.css"
 import Head from "next/head"
 
 export default function App({ Component, pageProps }) {
@@ -18,6 +19,10 @@ export default function App({ Component, pageProps }) {
             dangerouslySetInnerHTML={{ __html: gosquaredSnippet }}
           />
         )}
+        <link
+          href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <Component {...pageProps} />
     </>

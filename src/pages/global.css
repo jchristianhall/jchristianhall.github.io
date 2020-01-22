@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html,
+body,
+#__next {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.Home {
+  position: "relative";
+  display: flex;
+  flex: 1;
+  background-color: #191d21;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.HomeBackground {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.HomeBackground-element {
+  position: absolute;
+  height: 250px;
+  width: 600px;
+}
+
+.HomeBackground-top1 {
+  top: -100px;
+  background-color: rgb(60, 124, 72);
+  transform: rotate(-30deg);
+  left: -250px;
+}
+
+.HomeBackground-top2 {
+  top: -100px;
+  background-color: rgb(117, 242, 139);
+  transform: rotate(-40deg);
+  left: -250px;
+}
+
+.HomeBackground-bottom1 {
+  bottom: -100px;
+  background-color: rgb(60, 124, 72);
+  transform: rotate(-30deg);
+  right: -250px;
+}
+
+.HomeBackground-bottom2 {
+  bottom: -100px;
+  background-color: rgb(117, 242, 139);
+  transform: rotate(-40deg);
+  right: -250px;
+}
+
+.Home-name {
+  font-family: "Lato", sans-serif;
+  color: rgb(117, 242, 139);
+  display: block;
+  padding-bottom: 0.5rem;
+}
+
+.Home-byline {
+  font-family: "Lato", sans-serif;
+  color: white;
+  padding-bottom: 1.5rem;
+}
+
+.Home-bio {
+  font-family: "Lato", sans-serif;
+  color: white;
+  display: block;
+  width: 35%;
+  text-align: center;
+}
+
+.Home-footer {
+  font-family: "Lato", sans-serif;
+  color: white;
+  bottom: 1rem;
+  font-size: 0.8rem;
+  position: absolute;
+}
