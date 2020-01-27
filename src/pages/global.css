@@ -13,7 +13,7 @@ body,
 }
 
 .Home {
-  position: "relative";
+  position: relative;
   display: flex;
   flex: 1;
   background-color: #191d21;
@@ -29,38 +29,66 @@ body,
   height: 100%;
 }
 
-.HomeBackground-element {
-  position: absolute;
-  height: 250px;
-  width: 600px;
-}
-
 .HomeBackground-top1 {
-  top: -100px;
-  background-color: rgb(60, 124, 72);
-  transform: rotate(-30deg);
-  left: -250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 10rem solid rgb(60, 124, 72);
+  border-right: 10rem solid transparent;
 }
 
 .HomeBackground-top2 {
-  top: -100px;
-  background-color: rgb(117, 242, 139);
-  transform: rotate(-40deg);
-  left: -250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 15rem solid rgb(117, 242, 139);
+  border-right: 5rem solid transparent;
 }
 
 .HomeBackground-bottom1 {
-  bottom: -100px;
-  background-color: rgb(60, 124, 72);
-  transform: rotate(-30deg);
-  right: -250px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 10rem solid rgb(60, 124, 72);
+  border-left: 10rem solid transparent;
 }
 
 .HomeBackground-bottom2 {
-  bottom: -100px;
-  background-color: rgb(117, 242, 139);
-  transform: rotate(-40deg);
-  right: -250px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 15rem solid rgb(117, 242, 139);
+  border-left: 5rem solid transparent;
+}
+
+@media screen and (min-width: 40rem) {
+  .HomeBackground-top1 {
+    border-top: 15rem solid rgb(60, 124, 72);
+    border-right: 15rem solid transparent;
+  }
+
+  .HomeBackground-top2 {
+    border-top: 10rem solid rgb(117, 242, 139);
+    border-right: 20rem solid transparent;
+  }
+
+  .HomeBackground-bottom1 {
+    border-bottom: 15rem solid rgb(60, 124, 72);
+    border-left: 15rem solid transparent;
+  }
+
+  .HomeBackground-bottom2 {
+    border-bottom: 10rem solid rgb(117, 242, 139);
+    border-left: 20rem solid transparent;
+  }
 }
 
 .Home-name {
@@ -80,8 +108,14 @@ body,
   font-family: "Lato", sans-serif;
   color: white;
   display: block;
-  width: 35%;
+  width: 90%;
   text-align: center;
+}
+
+@media screen and (min-width: 40rem) {
+  .Home-bio {
+    width: 40%;
+  }
 }
 
 .Home-footer {
