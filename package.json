@@ -5,29 +5,18 @@
   "private": true,
   "version": "4.0.0",
   "dependencies": {
-    "gatsby": "^2.2.5",
-    "gatsby-image": "^2.0.34",
-    "gatsby-plugin-manifest": "^2.0.24",
-    "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-react-helmet": "^3.0.10",
-    "gatsby-plugin-sharp": "^2.0.30",
-    "gatsby-source-filesystem": "^2.0.27",
-    "gatsby-transformer-sharp": "^2.1.17",
+    "next": "^9.2.0",
+    "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-helmet": "^5.2.0"
-  },
-  "devDependencies": {
-    "gh-pages": "^2.0.1",
-    "prettier": "^1.16.4"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "gatsby develop -p 7777",
-    "serve": "gatsby serve"
+    "deploy": "now",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -35,5 +24,8 @@
   },
   "bugs": {
     "url": "https://github.com/jchristianhall/jchristianhall.github.io/issues"
+  },
+  "devDependencies": {
+    "now": "^16.7.3"
   }
 }
