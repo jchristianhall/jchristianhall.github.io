@@ -8,17 +8,31 @@ function Home() {
         <div className="HomeBackground-element HomeBackground-bottom2"></div>
       </div>
 
-      <h1 className="Home-name">Christian Hall</h1>
-      <h2 className="Home-byline">Software Engineer</h2>
+      <div className="Home-content">
+        <h1 className="Home-name">Christian Hall</h1>
+        <h2 className="Home-byline">Software Engineer</h2>
 
-      <p className="Home-bio">
-        Christian is a software engineer who cares deeply for usable designs and
-        sustainable development.
-      </p>
+        <p className="Home-bio">
+          Christian is a software engineer who cares deeply for usable designs
+          and sustainable development.
+        </p>
 
-      <footer className="Home-footer">
-        Crafted in Tennessee. &copy; {new Date().getFullYear()}
-      </footer>
+        <div className="Home-links">
+          <a href="/Christian Hall Resume.pdf" className="Home-link">
+            Resume
+          </a>
+          <a href="https://twitter.com/jchristianhall" className="Home-link">
+            Twitter
+          </a>
+          <a href="https://github.com/jchristianhall" className="Home-link">
+            GitHub
+          </a>
+        </div>
+
+        <footer className="Home-footer">
+          Crafted in Tennessee. &copy; {new Date().getFullYear()}
+        </footer>
+      </div>
     </main>
   )
 }
