@@ -13,6 +13,7 @@
   },
   "scripts": {
     "format": "prettier --write src/**/*.{js,jsx}",
+    "deploy": "now",
     "dev": "next",
     "build": "next build",
     "start": "next start"
@@ -23,5 +24,8 @@
   },
   "bugs": {
     "url": "https://github.com/jchristianhall/jchristianhall.github.io/issues"
+  },
+  "devDependencies": {
+    "now": "^16.7.3"
   }
 }
