@@ -99,20 +99,20 @@ body,
 }
 
 .Home-name {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: rgb(117, 242, 139);
   display: block;
   padding-bottom: 0.5rem;
 }
 
 .Home-byline {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: white;
   padding-bottom: 1.5rem;
 }
 
 .Home-bio {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: white;
   display: block;
   width: 90%;
@@ -134,7 +134,7 @@ body,
 .Home-link {
   color: rgb(117, 242, 139);
   text-decoration: none;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   margin-right: 0.5rem;
   padding-bottom: 0.2rem;
   border-bottom: 0.1rem solid rgb(117, 242, 139);
@@ -151,9 +151,85 @@ body,
 }
 
 .Home-footer {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: white;
   bottom: 1rem;
+  font-size: 0.8rem;
+  position: absolute;
+}
+
+/**
+ * T&N Maker Project
+ */
+@font-face {
+  font-display: swap;
+  font-family: 'Tiempos Headline Bold';
+  src: url('/fonts/TiemposHeadlineWeb-Bold.eot');
+  src: url('/fonts/TiemposHeadlineWeb-Bold.eot') format('eot'),
+    url('/fonts/TiemposHeadlineWeb-Bold.woff2') format('woff2'),
+    url('/fonts/TiemposHeadlineWeb-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Apercu Medium';
+  src: url('/fonts/apercu-medium.eot?#iefix');
+  src: url('/fonts/apercu-medium.eot') format('eot'),
+    url('/fonts/apercu-medium.woff2') format('woff2'),
+    url('/fonts/apercu-medium.woff') format('woff'),
+    url('/fonts/apercu-medium.ttf') format('truetype');
+}
+
+.TN {
+  background-color: rgb(43, 40, 35);
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.TN-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+}
+
+.TN-header {
+  color: rgb(255, 255, 255);
+  font-family: 'Tiempos Headline Bold', serif;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.TN-subtitle {
+  color: rgb(255, 255, 255);
+  font-family: 'Apercu Medium', sans-serif;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.TN-gif {
+  height: 300px;
+}
+
+.TN-button {
+  background-color: transparent !important;
+  cursor: pointer;
+  outline: 0;
+  margin-top: 12px;
+}
+
+.TN-blockImg {
+  width: 50px;
+  height: 50px;
+}
+
+.TN-footer {
+  bottom: 1rem;
+  color: white;
+  font-family: 'Apercu Medium', sans-serif;
   font-size: 0.8rem;
   position: absolute;
 }
